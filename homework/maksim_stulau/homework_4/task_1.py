@@ -7,7 +7,7 @@ print(my_dict)
 
 last_value = my_dict["tuple"]
 # print(last_value)
-# print(last_value[-1])
+print(last_value[-1])
 
 add_del_list = my_dict["list"]
 # print(add_del_list)
@@ -17,7 +17,7 @@ add_del_list.append(33)
 
 new_dict = my_dict["dict"]
 # print(new_dict)
-new_dict["i am a tuple"] = 1
+new_dict["('i am a tuple',)"] = 1
 new_dict.pop("age")
 # print(new_dict)
 
