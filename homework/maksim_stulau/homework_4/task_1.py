@@ -17,7 +17,8 @@ add_del_list.append(33)
 
 new_dict = my_dict["dict"]
 # print(new_dict)
-new_dict["('i am a tuple',)"] = 1
+print(new_dict)
+new_dict[(('i am a tuple',))] = 'try is 100500'
 new_dict.pop("age")
 # print(new_dict)
 
