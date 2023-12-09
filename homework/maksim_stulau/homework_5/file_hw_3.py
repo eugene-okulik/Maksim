@@ -6,3 +6,5 @@ subjects = ', '.join(subjects)
 
 print(f"Students {students} study these subjects: {subjects}")
 
+
+
