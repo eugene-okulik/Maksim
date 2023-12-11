@@ -10,4 +10,4 @@ num_1 = int(result_1[ind_num_1:]) + 10
 num_2 = int(result_2[ind_num_2:]) + 10
 num_3 = int(result_3[ind_num_3:]) + 10
 
-print(num_1, num_2, num_3, sep='\n')
+print(num_1, num_2, num_3, sep='\n') 
