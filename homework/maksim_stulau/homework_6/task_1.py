@@ -20,4 +20,4 @@ for i in new_text:
         i = i + "ing"
     out_text.append(i)
 
-print(out_text)
+print(' '.join(out_text))
