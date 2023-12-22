@@ -32,4 +32,3 @@ for number in generate():
     count += 1
 
 print(f_list[:3])
-

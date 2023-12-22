@@ -6,7 +6,7 @@
     10000, True - '$10255'
     25000, False - '$25000'
     600, True - '$3785'
-"""
+ """
 
 from random import choice
 
