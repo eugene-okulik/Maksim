@@ -41,6 +41,8 @@
 
 Название: Алгебра, Автор: Иванов, страниц: 200, предмет: Математика, класс: 9"""
 
+# from abc import abstractmethod
+
 
 class Book:
 
@@ -54,6 +56,10 @@ class Book:
         self.isbn = isbn
         self.reserved = reserved
 
+    # @abstractmethod
+    # def get_book(self):
+    #     pass
+
     def get_book(self):
         if self.reserved:
             print(f"Название: {self.book_name}, Автор: {self.author}, страниц: {self.nums_page}, "
@@ -66,7 +72,6 @@ class Book:
 class Subjects(Book):
 
     subject_type = "textbooks"
-    school_class = "7b"
     has_tasks = True
 
     def __init__(self, book_name, author, nums_page, isbn, subject, class_name, reserved):
@@ -74,7 +79,7 @@ class Subjects(Book):
         self.subject = subject
         self.class_name = class_name
 
-    def get_textbook(self):
+    def get_book(self):
         if self.reserved:
             print(f"Название: {self.book_name}, Автор: {self.author}, страниц: {self.nums_page}, "
                   f"предмет: {self.subject}, класс: {self.class_name}, зарезервирована")
@@ -99,6 +104,6 @@ book_3.get_book()
 book_4.get_book()
 book_5.get_book()
 
-textbook_1.get_textbook()
-textbook_2.get_textbook()
-textbook_3.get_textbook()
+textbook_1.get_book()
+textbook_2.get_book()
+textbook_3.get_book()
