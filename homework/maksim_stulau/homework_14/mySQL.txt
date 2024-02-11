@@ -34,6 +34,7 @@ INSERT  into subjets (title) values ('ThyCi')
 
 INSERT  INTO lessons (title, subject_id) values ('lesson 1', 408)
 
+
 INSERT INTO marks (value, lesson_id, student_id) values ('done', 365, 315)
 
 -- Получите информацию из базы данных:
