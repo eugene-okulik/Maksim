@@ -50,9 +50,9 @@ SELECT books.title from books where taken_by_student_id  = 315
 SELECT students.name, groups.title as `group`, books.title as book,
        marks.value, subjets.title as sub, lessons.title as less
 from students
-left join `groups` on students.group_id = groups.id
-left join books on books.taken_by_student_id = students.id
-left join marks on marks.student_id = students.id
-left JOIN lessons on lessons.id = marks.lesson_id
-left JOIN subjets on lessons.subject_id = subjets.id
+join `groups` on students.group_id = groups.id
+join books on books.taken_by_student_id = students.id
+join marks on marks.student_id = students.id
+JOIN lessons on lessons.id = marks.lesson_id
+JOIN subjets on lessons.subject_id = subjets.id
 where students.second_name = 'Saratas'
