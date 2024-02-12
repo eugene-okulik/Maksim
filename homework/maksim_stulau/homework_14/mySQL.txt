@@ -1,0 +1,58 @@
+Создайте в базе данных полный набор информации о студенте, заполнив все таблички:
+
+    Создайте студента (student)
+    Создайте несколько книг (books) и укажите, что ваш созданный студент взял их
+    Создайте группу (group) и определите своего студента туда
+    Создайте несколько учебных предметов (subjects)
+    Создайте по два занятия для каждого предмета (lessons)
+    Поставьте своему студенту оценки (marks) для всех созданных вами занятий
+
+Получите информацию из базы данных:
+
+    Все оценки студента
+    Все книги, которые находятся у студента
+    Для вашего студента выведите всё, что о нем есть в базе: группа, книги, оценки с названиями занятий и предметов (всё одним запросом с использованием Join)
+
+Все запросы, которые сделаете, сохраняйте в файлик с расширением .txt или .sql, и сдавайте как обычно.
+Параметры подключения:
+
+    username = st-onl
+    password = AVNS_tegPDkI5BlB2lW5eASC
+    host = db-mysql-fra1-09136-do-user-7651996-0.b.db.ondigitalocean.com
+    port = 25060
+    database = st-onl
+
+-- Создайте в базе данных полный набор информации о студенте, заполнив все таблички:
+
+insert INTO students (name, second_name, group_id) VALUES ('Borise', 'Saratas', 261)
+
+INSERT INTO `groups`(title, start_date, end_date) values ('C2C', 'okt 2023', 'mar 2024')
+
+INSERT INTO books (title, taken_by_student_id) values ('BuShiDo', 315)
+
+INSERT  into subjets (title) values ('ThyCi')
+
+INSERT  INTO lessons (title, subject_id) values ('lesson 1', 408)
+
+
+INSERT INTO marks (value, lesson_id, student_id) values ('done', 365, 315)
+
+-- Получите информацию из базы данных:
+-- Для вашего студента выведите всё, что о нем есть в базе:
+-- группа, книги, оценки с названиями занятий и предметов
+-- (всё одним запросом с использованием Join)
+
+SELECT * from marks WHERE student_id = 315
+
+SELECT books.title from books where taken_by_student_id  = 315
+
+
+SELECT students.name, groups.title as `group`, books.title as book,
+       marks.value, subjets.title as sub, lessons.title as less
+from students
+join `groups` on students.group_id = groups.id
+join books on books.taken_by_student_id = students.id
+join marks on marks.student_id = students.id
+JOIN lessons on lessons.id = marks.lesson_id
+JOIN subjets on lessons.subject_id = subjets.id
+where students.second_name = 'Saratas'
