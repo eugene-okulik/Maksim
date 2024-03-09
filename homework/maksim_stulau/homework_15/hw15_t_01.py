@@ -50,7 +50,7 @@ cursor.execute("""
     join marks on marks.student_id = students.id
     JOIN lessons on lessons.id = marks.lesson_id
     JOIN subjets on lessons.subject_id = subjets.id
-    where students.name = 'GLEB'
+    where students.name = 'GLEB' and students.id = student_id
 """)
 result = cursor.fetchone()
 print("Results of the joined data:")
