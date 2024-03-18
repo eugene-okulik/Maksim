@@ -1,4 +1,4 @@
-Name,second_name,group_title,book_title,subject_title,lesson_title,mark_value
+name,second_name,group_title,book_title,subject_title,lesson_title,mark_value
 Ivan,Petrov,BGPA_107227,Turbo Pascal,Higher mathematics,Math analys,2
 Petr,Ivanov,GR_O222,Turbo Pascal2,SUBD,NonSQL DB,5
 Petr,Ivanov,GR_O222,Python basics,SUBD,Relational DB,OTL
