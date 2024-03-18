@@ -38,5 +38,5 @@ for _ in csv_data:
         print(_)
 
 
-# print(csv_data)
+#  print(csv_data)
 # db.close()
