@@ -1,5 +1,5 @@
 import mysql.connector as mysql
-import creds
+# import creds
 import os
 import dotenv
 import csv_files
@@ -38,10 +38,5 @@ for _ in csv_data:
         print(_)
 
 
-
 # print(csv_data)
-
-
-
-
 # db.close()
