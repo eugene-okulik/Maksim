@@ -24,4 +24,4 @@ def csv_f():
 # for row in data_csv:
 #     name, second_name, group_title, book_title, subject_title, lesson_title, mark_value = row
     # print(f'Name: {name}, Second name {second_name}, group_title: {group_title}, Book title {book_title}, '
-    #       f'Subject title {subject_title}, lesson title {lesson_title}, Mark value {mark_value}')
+    #       f'Subject title {subject_title}, lesson title {lesson_title}, Mark value {mark_value}'
