@@ -24,7 +24,6 @@ cursor.execute("""
     join marks on marks.student_id = students.id
     JOIN lessons on lessons.id = marks.lesson_id
     JOIN subjets on lessons.subject_id = subjets.id
-    
 """)
 data = cursor.fetchall()
 # print(data)
