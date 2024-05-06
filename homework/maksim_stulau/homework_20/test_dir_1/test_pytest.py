@@ -1,5 +1,6 @@
 import requests
 import pytest
+import allure
 
 
 @pytest.fixture()
@@ -33,12 +34,18 @@ def borders():
     print("after test")
 
 
+@allure.feature('Posts')
+@allure.story('Get posts')
 def test_get_one_post(new_post_id, run, borders):
     print('test')
-    response = requests.get(f'https://api.restful-api.dev/objects{new_post_id}').json()
-    assert response['id'] == new_post_id
+    with allure.step(f'Run get request for post with id {new_post_id}'):
+        response = requests.get(f'https://api.restful-api.dev/objects{new_post_id}').json()
+    with allure.step(f'Check that post id is {new_post_id}')    :
+        assert response['id'] == new_post_id
 
 
+@allure.feature('Posts')
+@allure.story('Get posts')
 @pytest.mark.critical
 def test_get_all_posts(borders):
     print('test')
@@ -46,22 +53,28 @@ def test_get_all_posts(borders):
     assert len(response) == 13
 
 
+@allure.feature('Posts')
+@allure.story('Create posts')
 @pytest.mark.medium
 def test_add_post(borders):
     print('test')
-    body = {
-        "title": "fsakj", "body": "barasdf", "userId": 1}
-    headers = {'Content-Type': 'application/json'}
-    response = requests.post(
-        'https://api.restful-api.dev/objects',
-        json=body,
-        headers=headers
-    )
-
-    assert response.status_code == 200
+    with allure.step('Prepare test data'):
+        body = {
+            "title": "fsakj", "body": "barasdf", "userId": 1}
+        headers = {'Content-Type': 'application/json'}
+    with allure.step('Run request to create a post'):
+        response = requests.post(
+            'https://api.restful-api.dev/objects',
+            json=body,
+            headers=headers
+        )
+    with allure.step('Check response code is 200'):
+        assert response.status_code == 200
     # assert response.json()["title"] == "fsakj"
 
 
+@allure.feature('Example')
+@allure.story('Manipulate posts')
 @pytest.mark.parametrize('body', [12345, '#$%^&', ''])
 def test_patch_a_post(new_post_id, borders, body):
     print('test')
