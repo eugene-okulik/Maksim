@@ -1,0 +1,6 @@
+ff8081818f4d32ff018f4f47d2300899
+before test
+test
+{'timestamp': '2024-05-06T19:00:58.940+00:00', 'status': 404, 'error': 'Not Found', 'path': '/objectsff8081818f4d32ff018f4f47d2300899'}
+after test
+deleting the post
