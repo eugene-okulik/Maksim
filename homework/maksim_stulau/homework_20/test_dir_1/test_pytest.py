@@ -40,7 +40,7 @@ def test_get_one_post(new_post_id, run, borders):
     print('test')
     with allure.step(f'Run get request for post with id {new_post_id}'):
         response = requests.get(f'https://api.restful-api.dev/objects{new_post_id}').json()
-    with allure.step(f'Check that post id is {new_post_id}')    :
+    with allure.step(f'Check that post id is {new_post_id}'):
         assert response['id'] == new_post_id
 
 
